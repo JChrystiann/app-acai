@@ -24,7 +24,7 @@ import Constants from 'expo-constants';
     },
 
     title: {
-        fontSize: 24,
+        fontSize: 20,
         marginBottom:16,
         marginTop:5,
         color: '#45185B',
@@ -33,7 +33,7 @@ import Constants from 'expo-constants';
 
     descricao:{
         fontSize: 12,
-        marginBottom:16,
+        marginBottom:5,
         marginTop:1,
         textAlign:'center'
         
@@ -41,7 +41,7 @@ import Constants from 'expo-constants';
     },
 
     incidentList:{
-        marginTop:32,
+        marginTop:8,
     },
 
     incident: {
@@ -49,12 +49,14 @@ import Constants from 'expo-constants';
         borderRadius: 8,
         backgroundColor: '#FFF',
         marginBottom:16,
+        
     },
 
     incidentProperty:{
         fontSize: 14,
         color: '#41414d',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom:8,
     },
 
    
@@ -78,6 +80,20 @@ import Constants from 'expo-constants';
         fontSize: 15,
         fontWeight: "bold"
     
-    }
+    },
+
+    colunasObjetoTitulo:{
+        alignItems:"center",
+        flexDirection: "row",
+        justifyContent: 'space-between'
+
+    },
+
+    colunasObjeto:{
+        alignItems:"center",
+        flexDirection: "row",
+        
+
+    },
 
  });
