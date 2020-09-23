@@ -9,17 +9,18 @@ import api from "../../services/api";
 
 export default function Pedidos() {
   const navigation = useNavigation();
-
   const [pedidos, setPedidos] = useState();
+  const[total, setTotal] = useState(0);
 
   async function carregarPedidos() {
     const response = await api.get("/pedidos");
     setPedidos(response.data);
-    console.log(response);
+    setTotal(response.headers);
+    console.log(response.data);
   }
 
-  function navigateToDetail() {
-    navigation.navigate("Detail");
+  function navigateToDetail(pedido) {
+    navigation.navigate("Detail",{pedido});
   }
 
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function Pedidos() {
       <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>
-          Total de Pedidos: <Text style={styles.headerTextBold}>0 Pedidos</Text>
+  Total de Pedidos: <Text style={styles.headerTextBold}>{pedidos.length} Pedidos</Text>
         </Text>
       </View>
 
@@ -65,7 +66,7 @@ export default function Pedidos() {
             </Text>
             <TouchableOpacity
               style={styles.detailsButton}
-              onPress={navigateToDetail}
+              onPress={()=>navigateToDetail(pedido)}
             >
               <Text style={styles.detailsButtonText}>
                 Ver mais Detalhes do Pedido:
